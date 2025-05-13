@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --fontfamily: 'DM Sans', 'sans serif';
+    --purple100: hsl(254, 88%, 90%);
+    --purple500: hsl(256, 67%, 59%);
+    --yellow100: hsl(31, 66%, 93%);
+    --yellow500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --offwhite: hsl(220, 10%, 96%);
+    --black: hsl(0, 0%, 7%);
+}
+
+body {
+    
+    font-family: var(--fontfamily);
+    line-height: .9;
+    display: grid;
+    place-content: center;
+    padding-top: 4rem;
+    background-color: var(--offwhite);
+}
+
+.bento-grid-container {
+    display: grid;
+    max-width: 90rem;
+    margin-inline: auto;
+    background-color: transparent;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 24.5rem 24.5rem 24.5rem;
+    grid-template-areas: 
+    'column1 column2 column3'
+    'column1 column2 column3'
+    'column1 column4 column4'
+    ;
+}
+
+.bento-grid-container > * {
+    display: grid;
+}
+
+.inside-element {
+    display: flex;
+    gap: 2rem;
+}
+
+.bento-grid-container div {
+    border-radius: 15px;
+    padding: 1.2rem;
+}
+
+.column-one {
+    grid-area: column1;
+    display: grid;
+    gap: 1rem;
+}
+
+.column-two {
+    grid-area: column2;
+}
+
+.column-three {
+    grid-area: column3;
+}
+
+.column-four {
+    grid-area: column4;
+}
+
+.create {
+    background-color: var(--yellow100);
+    display: grid;
+    place-content: center;
+}
+
+.create h2 {
+    margin-bottom: 2rem;
+}
+
+.create img {
+    width: 70%;
+}
+
+.content {
+    background-color: var(--yellow500);
+    display: grid;
+    
+}
+
+.content img {
+    width: 95%;
+}
+
+.media {
+    background-color: var(--purple500);
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.media img{
+    width: 25%;
+    margin-top: 1rem;
+}
+
+.media small {
+    margin-top: .5rem;
+    color: lightgray;
+}
+
+.multiple-platforms {
+    background-color: var(--white);
+    display: grid;
+    place-content: center;
+}
+
+.multiple-platforms img {
+    width: 90%;
+}
+
+.consistent {
+    background-color: var(--yellow500);
+    display: grid;
+    gap: 1rem;  
+}
+
+.consistent img {
+    width: 90%;
+    overflow: hidden;
+}
+
+.schedule {
+    background-color: var(--purple100);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule img {
+    width: 90%;
+    height: 50%;
+    margin: 1rem 0;
+}
+
+.schedule h2 {
+    font-size: 2rem;
+}
+
+.schedule small{
+    font-size: 1.5rem;
+}
+
+.audience {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.audience small {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.audience img {
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.followers {
+    background-color: var(--purple500);
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.followers img {
+    width: 50%;
+}
+
+h2 
+{
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: .9;
+    margin-bottom: 1 rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 500;   
+}
+
+h1 small {
+    font-size: 1rem;
+}
+
+
+
+@media (max-width: 640px) {
+    
+    body {
+        padding: .1rem;
+    }
+    
+    .bento-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'column2'
+    'column3'
+    'column4'
+    'column1'
+    ;
+    }
+
+    .inside-element {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column-one {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column-two {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .followers {
+        gap: .8rem;
+    }
+
+    .followers h2 {
+        font-size: 2.3rem;
+    }
+
+}
+
+@media (min-width:641px) and (max-width: 1024px) {
+    body {
+        padding: .1rem;
+    }
+    
+    .bento-grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'column2 column3'
+    'column2 column3'
+    'column4 column4' 
+    'column1 column1'
+    ;
+    }
+
+    .column-one {
+        display: flex;
+    }
+
+}
